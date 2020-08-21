@@ -5,6 +5,7 @@
    "types": "./src/index.d.ts",
    "main": "./build/index.js",
    "devDependencies": {
+      "@types/chai": "^4.2.12",
       "@types/expect": "^24.3.0",
       "@types/lodash": "^4.14.159",
       "@types/mocha": "^8.0.3",
@@ -29,10 +30,10 @@
       "gen-types": "dts-generator --prefix starter --project . --out src/index.d.ts --exclude **/*.d.ts --exclude **/*.spec.ts"
    },
    "nodemonConfig": {
-     "ignore": [
-       "./cache/*"
-     ],
-     "delay": "500",
-     "ext": "ts,js,json"
+      "ignore": [
+         "./cache/*"
+      ],
+      "delay": "500",
+      "ext": "ts,js,json"
    }
 }
