@@ -1,5 +1,5 @@
 {
-   "name": "ts-node-project",
+   "name": "simple-ts-node-starter",
    "version": "0.0.1",
    "description": "Stupid simple ts-node template",
    "devDependencies": {
