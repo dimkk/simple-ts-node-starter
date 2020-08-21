@@ -3,3 +3,9 @@ export default async () => {
         resolve('ok')
     })
 }
+
+export const Data = {
+    some: 'some',
+    sample: 'sample',
+    object: 123
+}

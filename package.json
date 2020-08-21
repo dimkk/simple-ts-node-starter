@@ -2,9 +2,18 @@
    "name": "simple-ts-node-starter",
    "version": "0.0.1",
    "description": "Stupid simple ts-node template",
+   "types": "./src/index.d.ts",
+   "main": "./build/index.js",
    "devDependencies": {
+      "@types/expect": "^24.3.0",
       "@types/lodash": "^4.14.159",
+      "@types/mocha": "^8.0.3",
       "@types/node": "^8.0.29",
+      "chai": "^4.2.0",
+      "dts-generator": "^3.0.0",
+      "mocha": "^8.1.1",
+      "nodemon": "^2.0.4",
+      "ts-mocha": "^7.0.0",
       "ts-node": "3.3.0",
       "typescript": "3.3.3333"
    },
@@ -13,6 +22,17 @@
       "lodash": "^4.17.20"
    },
    "scripts": {
-      "start": "ts-node src/index.ts"
+      "start": "ts-node src/index.ts",
+      "start:watch": "nodemon --exec \"ts-node src/index.ts\"",
+      "test": "ts-mocha -p tsconfig.json src/**/*.spec.ts",
+      "test:watch": "nodemon --exec \"ts-mocha -w -c ./src/**/*.spec.ts \"",
+      "gen-types": "dts-generator --prefix starter --project . --out src/index.d.ts --exclude **/*.d.ts --exclude **/*.spec.ts"
+   },
+   "nodemonConfig": {
+     "ignore": [
+       "./cache/*"
+     ],
+     "delay": "500",
+     "ext": "ts,js,json"
    }
 }
