@@ -16,5 +16,10 @@ if (process.env.NODE_ENV !== 'production') {
   logger.add(new winston.transports.File({ filename: 'error.log', level: 'error' }));
   logger.add(new winston.transports.File({ filename: 'all.log'}));
 }
+// Call exceptions.handle with a transport to handle exceptions
+logger.exceptions.handle(
+  new winston.transports.File({ filename: 'exceptions.log' })
+);
+
 
 export default logger
