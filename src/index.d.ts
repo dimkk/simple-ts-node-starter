@@ -1,4 +1,4 @@
-declare module 'starter/src/core/utils/usefulFunc' {
+declare module 'core/utils/usefulFunc' {
 	 const _default: () => Promise<{}>;
 	export default _default;
 	export const Data: {
@@ -8,11 +8,16 @@ declare module 'starter/src/core/utils/usefulFunc' {
 	};
 
 }
-declare module 'starter/src/index' {
+declare module 'index' {
 	export {};
 
 }
-declare module 'starter/src/core/utils/usefulClass' {
+declare module 'core/utils/logger' {
+	import * as winston from 'winston'; const logger: winston.Logger;
+	export default logger;
+
+}
+declare module 'core/utils/usefulClass' {
 	export const usefulClass: {
 	    new (name: any): {
 	        _name: string;
